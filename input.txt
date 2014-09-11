@@ -1,0 +1,6 @@
+a b c d e f
+f e d c b a
+um dois tres
+tres dois um
+quatro cinco
+cinco quatro
