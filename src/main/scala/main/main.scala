@@ -1,16 +1,18 @@
-object Input { 
-	def main(args: Array[String]) = {
+package main
 
-		val scores = scala.collection.mutable.Map[String, Int]()
-		for (line <- io.Source.stdin.getLines().flatMap(_.split("\\W+"))) {
-			if (scores.contains(line)) scores(line) += 1  else scores(line) = 1
-		}
-				
-		for ( (k,v) <- scores) {
-			println(k + " - " + v)
-		}
-	}
-	
+import impl.MapCounter
+
+object Main extends App {
+
+  val counter = new MapCounter
+
+  for (word <- io.Source.stdin.getLines().flatMap(_.split("\\W+"))) {
+    counter.account(word)
+  }
+
+  for ( (k,v) <- counter.getWords()) {
+    println(k + " - " + v)
+  }
 
 }
 
