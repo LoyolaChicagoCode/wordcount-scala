@@ -7,7 +7,7 @@ class CounterTest extends FunSuite {
 
   test("An empty map should have no word") {
     val counter = new MapCounter
-
+    assert(counter.getWordCount() == 0)
   }
 
   test("Check whether the first occurrence of a word is correctly computed") {

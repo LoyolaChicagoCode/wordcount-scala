@@ -22,4 +22,7 @@ class MapCounter extends main.Counter {
     scores.getOrElse(word, -1);
   }
 
+  def getWordCount() : Int = {
+    scores.size
+  }
 }
